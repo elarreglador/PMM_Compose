@@ -37,6 +37,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
 @Composable
 fun OnboardingScreen(
     onContinueClicked: () -> Unit,
@@ -56,6 +57,8 @@ fun OnboardingScreen(
         }
     }
 }
+
+
 @Composable
 fun MyApp(modifier: Modifier = Modifier) {
 
@@ -70,6 +73,7 @@ fun MyApp(modifier: Modifier = Modifier) {
     }
 }
 
+
 @Composable
 private fun Greetings(
     modifier: Modifier = Modifier,
@@ -82,8 +86,11 @@ private fun Greetings(
     }
 }
 
+
 @Composable
 private fun Greeting(name: String, modifier: Modifier = Modifier) {
+    // Aqui no seria correcto declarar var expanded = true
+    // porque seria siempre true y no aplicarian los cambios
     var expanded by rememberSaveable { mutableStateOf(false) }
     val extraPadding by animateDpAsState(
         if (expanded) 48.dp else 0.dp,
@@ -116,6 +123,7 @@ private fun Greeting(name: String, modifier: Modifier = Modifier) {
         }
     }
 }
+
 
 @Preview(
     showBackground = true,
